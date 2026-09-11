@@ -232,6 +232,7 @@ function attachEvents() {
             if (text !== '') {
                 addWish(text); // 1. opdater model
                 render();       // 2. tegn view igen
+                // (ingen alert her - man kan se ønsket dukke op i listen med det samme)
             }
         });
     }
@@ -265,8 +266,9 @@ function attachEvents() {
             const product = model.products.find(p => p.id === id);
 
             if (product) {
-                addProductToWishlist(product); // 1. opdater model
-                render();                        // 2. tegn view igen
+                addProductToWishlist(product);      // 1. opdater model
+                render();                             // 2. tegn view igen
+                alert('wish has been added');          // 3. giv besked til brugeren
             }
         });
     });
